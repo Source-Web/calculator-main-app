@@ -1,0 +1,541 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*Theme 1*/
+    --theme-1-main-bg: hsl(222, 26%, 31%);
+    --theme-1-toggle-and-keypad-bg: hsl(223, 31%, 20%);
+    --theme-1-screen-bg: hsl(224, 36%, 15%);
+    --theme-1-filled-key-bg: hsl(225, 21%, 49%);
+    --theme-1-filled-key-shadow: hsl(224, 28%, 35%);
+    --theme-1-filled-hv: hsl(224, 51%, 76%);
+    --theme-1-equal-and-toggle-ball-bg: hsl(6, 63%, 50%);
+    --theme-1-equal-and-toggle-ball-hv: hsl(6, 93%, 67%);
+    --theme-1-equal-shadow: hsl(6, 70%, 34%);
+    --theme-1-hollow-key-bg: hsl(30, 25%, 89%);
+    --theme-1-hollow-key-shadow: hsl(28, 16%, 65%);
+    --theme-1-btn-text: hsl(221, 14%, 31%);
+    
+    /*Theme 2*/
+    --theme-2-main-bg: hsl(0, 0%, 90%);
+    --theme-2-toggle-and-keypad-bg: hsl(0, 5%, 81%);
+    --theme-2-screen-bg: hsl(0, 0%, 93%);
+    --theme-2-filled-key-bg: hsl(185, 42%, 37%);
+    --theme-2-filled-key-shadow: hsl(185, 58%, 25%);
+    --theme-2-filled-hv: hsl(186, 41%, 56%);
+    --theme-2-equal-and-toggle-ball-bg: hsl(25, 98%, 40%);
+    --theme-2-equal-and-toggle-ball-hv: hsl(25, 100%, 61%);
+    --theme-2-equal-shadow: hsl(25, 99%, 27%);
+    --theme-2-hollow-key-bg: hsl(45, 7%, 89%);
+    --theme-2-hollow-key-shadow: hsl(35, 11%, 61%);
+    --theme-2-btn-text: hsl(60, 10%, 19%);
+
+    /*Theme 3*/
+    --theme-3-main-bg: hsl(268, 75%, 9%);
+    --theme-3-toggle-and-keypad-bg: hsl(268, 71%, 12%);
+    --theme-3-screen-bg: hsl(268, 71%, 12%);
+    --theme-3-filled-key-bg: hsl(281, 89%, 26%);
+    --theme-3-filled-key-shadow: hsl(285, 91%, 52%);
+    --theme-3-filled-hv: hsl(280, 56%, 44%);
+    --theme-3-equal-and-toggle-ball-bg: hsl(176, 100%, 44%);
+    --theme-3-equal-and-toggle-ball-hv: hsl(176, 100%, 79%);
+    --theme-3-equal-shadow: hsl(177, 92%, 70%);
+    --theme-3-hollow-key-bg: hsl(268, 47%, 21%);
+    --theme-3-hollow-key-shadow: hsl(290, 70%, 36%);
+    --theme-3-hollow-hv: hsl(267, 53%, 44%);
+    --theme-3-btn-text: hsl(52, 100%, 62%);
+    --theme-3-equal-text: hsl(198, 20%, 13%);
+
+    /*Screen Desktop*/
+    --fs-answer-screen: 54px;
+    --fs-input-screen: 22px;
+    --fs-answer-screen-mobile: 38px;
+    --fs-input-screen-mobile: 16px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 95px 0;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    transition: all .5s linear;
+}
+
+button {
+    height: 60px;
+    font: inherit;
+    font-size: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+body.default {
+    background: var(--theme-1-main-bg);
+    color: white;
+}
+
+main {
+    width: 540px;
+}
+
+/*Header*/
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+.logo h1 {
+    font-size: 31px;
+    padding-left: 8px;
+    margin-bottom: 1px;
+}
+
+.themeHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 28px;
+    text-transform: uppercase;
+}
+
+.themeHeader small {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-right: -2px;
+    margin-bottom: 7px;
+}
+
+.themeHeader form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 71px;
+}
+
+.themeHeader form .themeNum {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/*Thumb and Track Styling*/
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+/*Thumb Style*/
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+body.default input[type="range"]::-webkit-slider-thumb {
+    background: var(--theme-1-equal-and-toggle-ball-bg);
+}
+
+body.default input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--theme-1-equal-and-toggle-ball-hv);
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+body.default input[type="range"]::-moz-range-thumb {
+    background: var(--theme-1-equal-and-toggle-ball-bg);
+}
+
+input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+body.default input[type="range"]::-ms-thumb {
+    background: var(--theme-1-equal-and-toggle-ball-bg);
+}
+
+/*Track Style*/
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 26px;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+body.default input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--theme-1-toggle-and-keypad-bg);
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 26px;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+body.default input[type="range"]::-moz-range-track {
+    background: var(--theme-1-toggle-and-keypad-bg);
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 26px;
+    padding: 5px;
+    border-radius: 50px;
+}
+
+body.default input[type="range"]::-ms-track {
+    background: var(--theme-1-toggle-and-keypad-bg);
+}
+
+/*Screen Style*/
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    height: 128px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#answerScreen {
+    width: 100%;
+    padding:  40px 32px 0;
+    font: inherit;
+    font-size: var(--fs-answer-screen);
+    text-align: right;
+    border: none;
+    outline: none;
+}
+
+#inputScreen {
+    width: 100%;
+    height: 100%;
+    padding:  2px 34px 5px;
+    font: inherit;
+    font-size: var(--fs-input-screen);
+    text-align: right;
+    border: none;
+    outline: none;
+}
+
+
+
+body.default .screen input {
+    background: var(--theme-1-screen-bg);
+    color: white;
+}
+
+/*Button*/
+
+.btnInput {
+    width: 100%;
+    padding: 32px 30px 36px 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px 25px;
+    border-radius: 10px;
+}
+
+body.default .btnInput {
+    background: var(--theme-1-toggle-and-keypad-bg);
+}
+
+#resetBtn {
+    grid-column: span 2;
+}
+
+#equalBtn {
+    grid-column: span 2;
+    font-size: 26px;
+    padding-top: 4px;
+}
+
+.hollow {
+    padding-top: 6px;
+}
+
+.filled {
+    text-transform: uppercase;
+    font-size: 28px;
+    padding-top: 4px;
+}
+
+body.default .hollow {
+    background: var(--theme-1-hollow-key-bg);
+    color: var(--theme-1-btn-text);
+    box-shadow: 0 4px 0 var(--theme-1-hollow-key-shadow);
+}
+
+body.default .hollow:hover {
+    background: white;
+}
+
+body.default .filled {
+    background: var(--theme-1-filled-key-bg);
+    color: white;
+    box-shadow: 0 4px 0 var(--theme-1-filled-key-shadow);
+}
+
+body.default .filled:hover {
+    background: var(--theme-1-filled-hv);
+}
+
+body.default #equalBtn {
+    background: var(--theme-1-equal-and-toggle-ball-bg);
+    color: white;
+    box-shadow: 0 4px 0 var(--theme-1-equal-shadow);
+}
+
+body.default #equalBtn:hover {
+    background: var(--theme-1-equal-and-toggle-ball-hv);
+}
+
+/*Theme 2*/
+
+body.light {
+    background: var(--theme-2-main-bg);
+    color: var(--theme-2-btn-text);
+}
+
+/*Thumb Style*/
+
+body.light input[type="range"]::-webkit-slider-thumb {
+    background: var(--theme-2-equal-and-toggle-ball-bg);
+}
+
+body.light input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--theme-2-equal-and-toggle-ball-hv);
+}
+
+body.light input[type="range"]::-moz-range-thumb {
+    background: var(--theme-2-equal-and-toggle-ball-bg);
+}
+
+body.light input[type="range"]::-ms-thumb {
+    background: var(--theme-2-equal-and-toggle-ball-bg);
+}
+
+/*Track Style*/
+
+body.light input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--theme-2-toggle-and-keypad-bg);
+}
+
+body.light input[type="range"]::-moz-range-track {
+    background: var(--theme-2-toggle-and-keypad-bg);
+}
+
+body.light input[type="range"]::-ms-track {
+    background: var(--theme-2-toggle-and-keypad-bg);
+}
+
+/*Screen Style*/
+
+body.light .screen input {
+    background: var(--theme-2-screen-bg);
+    color: var(--theme-2-btn-text);
+}
+
+/*Button*/
+
+body.light .btnInput {
+    background: var(--theme-2-toggle-and-keypad-bg);
+}
+
+body.light .hollow {
+    background: var(--theme-2-hollow-key-bg);
+    color: var(--theme-2-btn-text);
+    box-shadow: 0 4px 0 var(--theme-2-hollow-key-shadow);
+}
+
+body.light .hollow:hover {
+    background: white;
+}
+
+body.light .filled {
+    background: var(--theme-2-filled-key-bg);
+    color: white;
+    box-shadow: 0 4px 0 var(--theme-2-filled-key-shadow);
+}
+
+body.light .filled:hover {
+    background: var(--theme-2-filled-hv);
+}
+
+body.light #equalBtn {
+    background: var(--theme-2-equal-and-toggle-ball-bg);
+    color: white;
+    box-shadow: 0 4px 0 var(--theme-2-equal-shadow);
+}
+
+body.light #equalBtn:hover {
+    background: var(--theme-2-equal-and-toggle-ball-hv);
+}
+
+/*Theme 3*/
+
+body.medium {
+    background: var(--theme-3-main-bg);
+    color: var(--theme-3-btn-text);
+}
+
+
+/*Thumb Style*/
+
+body.medium input[type="range"]::-webkit-slider-thumb {
+    background: var(--theme-3-equal-and-toggle-ball-bg);
+}
+
+body.medium input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--theme-3-equal-and-toggle-ball-hv);
+}
+
+body.medium input[type="range"]::-moz-range-thumb {
+    background: var(--theme-3-equal-and-toggle-ball-bg);
+}
+
+body.medium input[type="range"]::-ms-thumb {
+    background: var(--theme-3-equal-and-toggle-ball-bg);
+}
+
+/*Track Style*/
+
+body.medium input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--theme-3-toggle-and-keypad-bg);
+}
+
+body.medium input[type="range"]::-moz-range-track {
+    background: var(--theme-3-toggle-and-keypad-bg);
+}
+
+body.medium input[type="range"]::-ms-track {
+    background: var(--theme-3-toggle-and-keypad-bg);
+}
+
+/*Screen Style*/
+
+body.medium .screen input {
+    background: var(--theme-3-screen-bg);
+    color: var(--theme-3-btn-text);
+}
+
+/*Button*/
+
+body.medium .btnInput {
+    background: var(--theme-3-toggle-and-keypad-bg);
+}
+
+body.medium .hollow {
+    background: var(--theme-3-hollow-key-bg);
+    color: var(--theme-3-btn-text);
+    box-shadow: 0 4px 0 var(--theme-3-hollow-key-shadow);
+}
+
+body.medium .hollow:hover {
+    background: var(--theme-3-hollow-hv);
+}
+
+body.medium .filled {
+    background: var(--theme-3-filled-key-bg);
+    color: white;
+    box-shadow: 0 4px 0 var(--theme-3-filled-key-shadow);
+}
+
+body.medium .filled:hover {
+    background: var(--theme-3-filled-hv);
+}
+
+body.medium #equalBtn {
+    background: var(--theme-3-equal-and-toggle-ball-bg);
+    color: var(--theme-2-btn-text);
+    box-shadow: 0 4px 0 var(--theme-3-equal-shadow);
+}
+
+body.medium #equalBtn:hover {
+    background: var(--theme-3-equal-and-toggle-ball-hv);
+}
+
+/*Mobile*/
+
+@media only screen and (max-width: 600px) {
+    body {
+        margin: 27px 0;
+    }
+
+    main {
+        width: 328px;
+    }
+
+    button {
+        font-size: 32px;
+        border-radius: 5px;
+    }
+
+    /*Screen Style*/
+
+    .screen {
+        height: 88px;
+    }
+
+    #answerScreen {
+        font-size: var(--fs-answer-screen-mobile);
+        padding: 26px 25px 0;
+    }
+
+    #inputScreen {
+        font-size: var(--fs-input-screen-mobile);
+        padding: 2px 26px 5px;
+    }
+
+    /*Button Style*/
+
+    .btnInput {
+        padding: 24px;
+        gap: 17px 13px;
+    }
+
+    .hollow {
+        padding-top: 8px;
+    }
+
+    .filled {
+        font-size: 20px;
+        padding-top: 2px;
+    }
+
+    #equalBtn {
+        font-size: 20px;
+    }
+}
