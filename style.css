@@ -50,10 +50,8 @@
     --theme-3-equal-text: hsl(198, 20%, 13%);
 
     /*Screen Desktop*/
-    --fs-answer-screen: 54px;
-    --fs-input-screen: 22px;
-    --fs-answer-screen-mobile: 38px;
-    --fs-input-screen-mobile: 16px;
+    --fs-screen-desktop: 54px;
+    --fs-screen-mobile: 38px;
 }
 
 body {
@@ -225,32 +223,19 @@ body.default input[type="range"]::-ms-track {
     flex-direction: column;
     margin-bottom: 24px;
     height: 128px;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
-#answerScreen {
-    width: 100%;
-    padding:  40px 32px 0;
-    font: inherit;
-    font-size: var(--fs-answer-screen);
-    text-align: right;
-    border: none;
-    outline: none;
-}
-
-#inputScreen {
+#screen {
     width: 100%;
     height: 100%;
-    padding:  2px 34px 5px;
+    padding:  1px 32px 0;
     font: inherit;
-    font-size: var(--fs-input-screen);
+    font-size: var(--fs-screen-desktop);
     text-align: right;
+    border-radius: 10px;
     border: none;
     outline: none;
 }
-
-
 
 body.default .screen input {
     background: var(--theme-1-screen-bg);
@@ -495,7 +480,7 @@ body.medium #equalBtn:hover {
     }
 
     main {
-        width: 328px;
+        width: 325px;
     }
 
     button {
@@ -509,14 +494,9 @@ body.medium #equalBtn:hover {
         height: 88px;
     }
 
-    #answerScreen {
-        font-size: var(--fs-answer-screen-mobile);
-        padding: 26px 25px 0;
-    }
-
-    #inputScreen {
-        font-size: var(--fs-input-screen-mobile);
-        padding: 2px 26px 5px;
+    #screen {
+        font-size: var(--fs-screen-mobile);
+        padding: 0 25px 0;
     }
 
     /*Button Style*/
@@ -537,5 +517,12 @@ body.medium #equalBtn:hover {
 
     #equalBtn {
         font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+
+    main {
+        width: 290px;
     }
 }

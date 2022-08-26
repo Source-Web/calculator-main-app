@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
- 
+
 </head>
+
 <body class="default">
 
   <main>
@@ -27,12 +30,9 @@
         </form>
       </div>
     </section>
-    <form>
       <div class="screen">
-      <input type="text" id="answerScreen" value="399,981" disabled>
-      <input type="text" id="inputScreen" disabled>
+        <input type="text" id="screen" value="399,981" disabled>
       </div>
-    </form>
     <section class="btnInput">
       <button class="btn hollow" data-val="7">7</button>
       <button class="btn hollow" data-val="8">8</button>
@@ -54,7 +54,8 @@
       <button class="equalBtn" id="equalBtn">=</button>
     </section>
   </main>
-  
+
   <script src="calculator.js"></script>
 </body>
+
 </html>
