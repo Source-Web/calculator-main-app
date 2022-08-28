@@ -1,13 +1,21 @@
-let theme = document.querySelectorAll('input[name="theme"]');
 let themeGet = window.localStorage.getItem('data-theme');
 
-    if(themeGet) {
-            document.firstElementChild.setAttribute('data-theme', themeGet);
-            theme[0].checked = themeGet == 'dark' ? true : false;
+if (themeGet) {
+    document.firstElementChild.setAttribute('data-theme', themeGet);
+}
+
+window.onload = () => {
+
+    let theme = document.querySelectorAll('input[name="theme"]');
+    let themeGet = window.localStorage.getItem('data-theme');
+
+    if (themeGet) {
+        document.firstElementChild.setAttribute('data-theme', themeGet);
+        theme[0].checked = themeGet == 'dark' ? true : false;
+        theme[1].checked = themeGet == 'light' ? true : false;
+        theme[2].checked = themeGet == 'purple' ? true : false;
     }
 
-    window.onload = () => {
-  
     for (let i = 0; i <= theme.length; i++) {
 
         theme[i].addEventListener('change', function () {
@@ -17,4 +25,4 @@ let themeGet = window.localStorage.getItem('data-theme');
         });
 
     }
-  }
+}

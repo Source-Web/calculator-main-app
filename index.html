@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
-<!-- <script src="themeChanger.js"></script> -->
+<script src="themeChanger.js"></script>
 
 </head>
 
@@ -29,9 +29,9 @@
           <label for="themeNum" class="themeNum"><span>1</span><span>2</span><span>3</span></label>
             <form>
               <div id="themeThumb">
-              <input type="radio" value="dark" id="dark" name="theme" checked>
-              <input type="radio" value="light" id="light" name="theme">
-              <input type="radio" value="purple" id="purple" name="theme">
+              <input type="radio" value="dark" id="dark" name="theme" checked switch>
+              <input type="radio" value="light" id="light" name="theme" switch>
+              <input type="radio" value="purple" id="purple" name="theme" switch>
             </div>
             </form>
         </form>
@@ -63,7 +63,7 @@
   </main>
 
   <script src="calculator.js"></script>
-  <script>
+  <!-- <script>
     let theme = document.querySelectorAll('input[name="theme"]');
     let themeGet = window.localStorage.getItem('data-theme');
 
@@ -81,7 +81,7 @@
         });
 
     }
-</script>
+</script> -->
 </body>
 
 </html>
