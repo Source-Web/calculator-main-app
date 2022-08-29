@@ -26,16 +26,20 @@
       <div class="themeHeader">
         <small>Theme</small>
         <form>
-          <label for="themeNum" class="themeNum"><span>1</span><span>2</span><span>3</span></label>
+          <label class="themeNum"><span>1</span><span>2</span><span>3</span></label>
           <div id="themeThumb">
+            <label for="dark" class="visuallyHidden">Dark Theme</label>
             <input type="radio" value="dark" id="dark" name="theme" checked>
+            <label for="light" class="visuallyHidden">Light Theme</label>
             <input type="radio" value="light" id="light" name="theme">
+            <label for="purple" class="visuallyHidden">Purple Theme</label>
             <input type="radio" value="purple" id="purple" name="theme">
           </div>
         </form>
       </div>
     </section>
     <div class="screen">
+      <label for="screen" class="visuallyHidden">Screen</label>
       <input type="text" id="screen" value="399,981" disabled>
     </div>
     <div class="btnInput">
