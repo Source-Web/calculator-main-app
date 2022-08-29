@@ -60,7 +60,7 @@
     --theme-3-equal-text: hsl(198, 20%, 13%);
     --theme-3-body-text: hsl(52, 100%, 62%);
 
-    /*Default Theme Variable*/
+    /*Default Theme Variables*/
 
     --main-bg: var(--theme-1-main-bg);
     --toggle-and-keypad-bg: var(--theme-1-toggle-and-keypad-bg);
@@ -215,6 +215,7 @@ input[name="theme"]:checked:hover {
     border-radius: 10px;
     border: none;
     outline: none;
+    transition: all .5s linear;
 }
 
 .screen input {
@@ -237,27 +238,8 @@ input[name="theme"]:checked:hover {
     background: var(--toggle-and-keypad-bg);
 }
 
-#resetBtn {
-    grid-column: span 2;
-}
-
-#equalBtn {
-    grid-column: span 2;
-    font-size: 26px;
-    padding-top: 4px;
-}
-
 .hollow {
     padding-top: 6px;
-}
-
-.filled {
-    text-transform: uppercase;
-    font-size: 28px;
-    padding-top: 4px;
-}
-
-.hollow {
     background: var(--hollow-key-bg);
     color: var(--btn-text);
     box-shadow: 0 4px 0 var(--hollow-key-shadow);
@@ -268,6 +250,9 @@ input[name="theme"]:checked:hover {
 }
 
 .filled {
+    text-transform: uppercase;
+    font-size: 28px;
+    padding-top: 4px;
     background: var(--filled-key-bg);
     color: white;
     box-shadow: 0 4px 0 var(--filled-key-shadow);
@@ -277,7 +262,14 @@ input[name="theme"]:checked:hover {
     background: var(--filled-hv);
 }
 
+#resetBtn {
+    grid-column: span 2;
+}
+
 #equalBtn {
+    grid-column: span 2;
+    font-size: 26px;
+    padding-top: 4px;
     background: var(--equal-and-toggle-ball-bg);
     color: white;
     box-shadow: 0 4px 0 var(--equal-shadow);
@@ -382,6 +374,6 @@ input[name="theme"]:checked:hover {
 @media only screen and (max-width: 340px) {
 
     main {
-        width: 290px;
+        width: calc((100vw) - 26px);
     }
 }

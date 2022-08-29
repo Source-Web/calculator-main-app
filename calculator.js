@@ -12,6 +12,17 @@ btn.forEach(button => {
 
 function getBtnValue(event) {
     let btnValue = event.target.dataset.val;
+    // if (btnValue === ".") {
+    //     if (screen.value.match(/[-+*\/]/)) {
+    //         let operandArr = screen.value.split(/[-+*\/]/);
+
+    //         for(i = operandArr.length; i <= operandArr.length; i--) {
+    //             if (operandArr[i].includes(".")) return  // this checks if second operand has decimal
+    //         }
+    //     } else {
+    //         if (screen.value.includes(".")) return // this checks if first operand has decimal
+    //     }
+    // }
     screen.value = (screen.value + btnValue).replace(/,/g, "");
 }
 

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Calculator app</title>
-<script src="themeChanger.js"></script>
+  <script src="themeChanger.js"></script>
 
 </head>
 
@@ -27,20 +27,18 @@
         <small>Theme</small>
         <form>
           <label for="themeNum" class="themeNum"><span>1</span><span>2</span><span>3</span></label>
-            <form>
-              <div id="themeThumb">
-              <input type="radio" value="dark" id="dark" name="theme" checked switch>
-              <input type="radio" value="light" id="light" name="theme" switch>
-              <input type="radio" value="purple" id="purple" name="theme" switch>
-            </div>
-            </form>
+          <div id="themeThumb">
+            <input type="radio" value="dark" id="dark" name="theme" checked>
+            <input type="radio" value="light" id="light" name="theme">
+            <input type="radio" value="purple" id="purple" name="theme">
+          </div>
         </form>
       </div>
     </section>
     <div class="screen">
       <input type="text" id="screen" value="399,981" disabled>
     </div>
-    <section class="btnInput">
+    <div class="btnInput">
       <button class="btn hollow" data-val="7">7</button>
       <button class="btn hollow" data-val="8">8</button>
       <button class="btn hollow" data-val="9">9</button>
@@ -59,29 +57,10 @@
       <button class="btn hollow" data-val="*">x</button>
       <button class="filled" id="resetBtn">Reset</button>
       <button class="equalBtn" id="equalBtn">=</button>
-    </section>
+    </div>
   </main>
 
   <script src="calculator.js"></script>
-  <!-- <script>
-    let theme = document.querySelectorAll('input[name="theme"]');
-    let themeGet = window.localStorage.getItem('data-theme');
-
-    if(themeGet) {
-            document.firstElementChild.setAttribute('data-theme', themeGet);
-            theme[0].checked = themeGet == 'dark' ? true : false;
-    }
-    
-    for (let i = 0; i <= theme.length; i++) {
-
-        theme[i].addEventListener('change', function () {
-            document.firstElementChild.setAttribute('data-theme', theme[i].value);
-
-            localStorage.setItem('data-theme', theme[i].value);
-        });
-
-    }
-</script> -->
 </body>
 
 </html>
