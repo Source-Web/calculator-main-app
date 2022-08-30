@@ -12,19 +12,78 @@ btn.forEach(button => {
 
 function getBtnValue(event) {
     let btnValue = event.target.dataset.val;
-    // if (btnValue === ".") {
-    //     if (screen.value.match(/[-+*\/]/)) {
-    //         let operandArr = screen.value.split(/[-+*\/]/);
 
-    //         for(i = operandArr.length; i <= operandArr.length; i--) {
-    //             if (operandArr[i].includes(".")) return  // this checks if second operand has decimal
+    /*Prevent Keydown of '.' twice for One Operand*/
+
+    if (btnValue === "." && screen.value.match(/[-+*\/]/g)) {
+
+        let operandArr = screen.value.split(/[-+*\/]/g);
+        for (i = 1; i < operandArr.length; i++)
+            if (operandArr[(operandArr.length - 1)].includes(".")) {
+                return false;
+            }
+
+            else if (operandArr[(operandArr.length - 1)] === "") {
+                btnValue = event.target.dataset.val2;
+            }
+        return screen.value = (screen.value + btnValue).replace(/,/g, "");
+    }
+
+    else if (btnValue === "." && screen.value.includes(".")) {
+        return;
+    }
+
+    else if (btnValue === "." && screen.value === "") {
+        btnValue = event.target.dataset.val2;
+    }
+
+    /*Truncate Leading Zero*/
+
+    if (btnValue === "0" && screen.value.match(/[-+*\/]/g)) {
+
+        let operandArr = screen.value.split(/[-+*\/]/g);
+        for (i = 1; i < operandArr.length; i++) {
+            if (operandArr[(operandArr.length - 1)] === "") {
+                return;
+            }
+
+            return screen.value = (screen.value + btnValue).replace(/,/g, "");
+        }
+    }
+
+    else if (btnValue === "0" && screen.value === "") {
+        return;
+    }
+
+    /*Check Invalid Operands*/
+
+    if (btnValue.match(/[+*\/]/g) && screen.value.match(/[+*\/]/g)) {
+
+        let operandArr = screen.value.split(/[+*\/]/g);
+        for (i = 1; i < operandArr.length; i++) {
+            if (operandArr[(operandArr.length - 1)] === "") {
+                return;
+            }
+
+            return screen.value = (screen.value + btnValue).replace(/,/g, "");
+        }
+    }
+
+    // else if (btnValue.match(/[-]/g) && screen.value.match(/[-+]/g)) {
+
+    //     let operandArr = screen.value.split(/[-+*\/]/g);
+    //     for (i = 1; i < operandArr.length; i++) {
+    //         if (operandArr[(operandArr.length - 1)] === "") {
+    //             return;
     //         }
-    //     } else {
-    //         if (screen.value.includes(".")) return // this checks if first operand has decimal
+
+    //         return screen.value = (screen.value + btnValue).replace(/,/g, "");
     //     }
     // }
+
     screen.value = (screen.value + btnValue).replace(/,/g, "");
 }
+
 
 /*Evaluate Screen Value*/
 
